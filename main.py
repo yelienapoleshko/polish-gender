@@ -51,14 +51,6 @@ def main():
     # Santize the input
     word = input_word.strip().lower()
 
-    gender = is_noun(word)
-
-    if(gender != None):
-        print(f"The noun '{word}' is most likely {gender}.")
-        return
-    
-    print("Looks like the word you entered may not be a noun in Polish. Check the word you entered to make sure it is a dictionary form.")
-
     if is_adjective(word):
         print("The word is probably an adjective.")
         return
@@ -66,7 +58,13 @@ def main():
     if is_verb(word):
         print("The word is probably a verb in its infinitive form.")
         return
-    
+
+    gender = is_noun(word)
+
+    if(gender != None):
+        print(f"The noun '{word}' is most likely {gender}.")
+        return
+        
     print("The word is probably not a noun, adjective, or verb in Polish.")
 
 
