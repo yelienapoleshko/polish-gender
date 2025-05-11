@@ -12,9 +12,12 @@ def is_noun(word):
     """
     Check if the word is a noun based on its ending.
     """
-    
+        # Masculine nouns - exceptions
+    if word in ["kierowca", "sprzedawca", "wykładowca", "wykonawca", "mężczyzna", "bandyta", "banita", "komunista", "kosmita", "obrońca", "poeta", "starosta", "wojewoda"] or word.endswith("ista") or word.endswith("ysta"):
+        return "Masculine"
+
     # Feminine nouns
-    if word.endswith(("a", "ni", "ość", "dź")):
+    elif word.endswith(("a", "ni", "ość", "dź")):
         return "Feminine"
 
     # Neuter nouns
@@ -23,10 +26,6 @@ def is_noun(word):
 
     # Masculine nouns
     elif word.endswith(("b", "p", "c", "d", "f", "g", "r", "s", "ś", "h", "j", "k", "l", "ł", "m", "n", "ń", "t", "w", "x", "z", "ź", "ż")):
-        return "Masculine"
-
-    # Masculine nouns - exceptions
-    elif word in ["kierowca", "sprzedawca", "wykładowca", "wykonawca", "mężczyzna", "bandyta", "banita", "komunista", "kosmita", "obrońca", "poeta", "starosta", "wojewoda"] or word.endswith("ista") or word.endswith("ysta"):
         return "Masculine"
 
     return None
