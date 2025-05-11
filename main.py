@@ -32,7 +32,7 @@ def is_noun(word):
 
 def is_adjective(word):
     # Check if the word is most likely an adjective
-    if word.endswith(("ny", "na", "ne", "owy", "owe", "owa", "ujący", "ująca", "ujące")):
+    if word.endswith(("ny", "na", "ne", "owy", "owe", "owa", "ujący", "ująca", "ujące", "ki", "gi")):
         return True
     
     return False
